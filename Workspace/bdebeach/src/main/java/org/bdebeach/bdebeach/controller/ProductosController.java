@@ -1,9 +1,9 @@
 package org.bdebeach.bdebeach.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.bdebeach.bdebeach.model.Producto;
+import org.bdebeach.bdebeach.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,12 +50,11 @@ public class ProductosController {
 	public Producto updateProducto(@PathVariable("prodId") Long id, 
 			@RequestParam(required=false) String nombre,
 			@RequestParam(required=false) String descripcion,
-			@RequestParam(required=false) String colores,
+			@RequestParam(required=false) String color,
 			@RequestParam(required=false) String tallas,
 			@RequestParam(required=false) String img,
 			@RequestParam(required=false) Double precio) {
-		return productoService.updateProduct(id, nombre, descripcion,
-				img, precio);
+		return productoService.updateProduct(id, nombre, descripcion, precio, color, tallas, img);
 	}//updateProducto
 	
 }//ProductosController

@@ -36,6 +36,8 @@ public class Producto {
 		this.precio = precio;
 	}//Constructor
 
+	public Producto() {
+	}//constructor vacio	
 	public String getNombre() {
 		return nombre;
 	}//getNombre

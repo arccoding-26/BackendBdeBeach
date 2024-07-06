@@ -1,7 +1,5 @@
 package org.bdebeach.bdebeach.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,36 +15,36 @@ public class Pedido {
 	@Column(name="id", unique=true, nullable=false)
 	private Long id;
 	@Column(nullable=false)
-	private Long id_user;
-	private Date fecha;
+	private Long Usuario_id;
+	private String fecha;
 	private String status;
-	private String mPago; //mPago significa= metodo de pago
+	private String metodopago; 
 	private Double total;
 	
-	public Pedido(Long id_user, Date fecha, String status, String mPago, Double total) {
-		this.id_user = id_user;
+	public Pedido(Long Usuario_id, String fecha, String status, String metodopago, Double total) {
+		this.Usuario_id = Usuario_id;
 		this.fecha = fecha;
 		this.status = status;
-		this.mPago = mPago;
+		this.metodopago = metodopago;
 		this.total = total;
-	}//contructor
+	}//constructor
 	
 	public Pedido() {
 	}//constructor vacío
 
 	public Long getId_user() {
-		return id_user;
+		return Usuario_id;
 	}//getId_user
 
 	public void setId_user(Long id_user) {
-		this.id_user = id_user;
+		this.Usuario_id = id_user;
 	}//setId_user
 
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}//getFecha
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}//setFecha
 
@@ -59,11 +57,11 @@ public class Pedido {
 	}//setStatus
 
 	public String getmPago() {
-		return mPago;
+		return metodopago;
 	}//getmPago
 
 	public void setmPago(String mPago) {
-		this.mPago = mPago;
+		this.metodopago = mPago;
 	}//setmPago
 
 	public Double getTotal() {
@@ -80,7 +78,7 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Pedido [id=" + id + ", id_user=" + id_user + ", fecha=" + fecha + ", status=" + status + ", mPago="
-				+ mPago + ", total=" + total + "]";
+		return "Pedido [id=" + id + ", id_user=" + Usuario_id + ", fecha=" + fecha + ", status=" + status + ", mPago="
+				+ metodopago + ", total=" + total + "]";
 	}//toString
 }//class Pedido

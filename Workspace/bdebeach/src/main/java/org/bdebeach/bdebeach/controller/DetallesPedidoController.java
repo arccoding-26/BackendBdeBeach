@@ -1,6 +1,9 @@
 package org.bdebeach.bdebeach.controller;
 
+import java.util.List;
+
 import org.bdebeach.bdebeach.model.Detalles;
+import org.bdebeach.bdebeach.service.DetallesPedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,31 +19,31 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/api/detalles/")
 public class DetallesPedidoController {
 
-	private final DetallesService detallesService;
+	private final DetallesPedidoService detallesPedidoService;
 
 	@Autowired	
-	public DetallesPedidoController(DetallesService detallesService) {
-		this.detallesService=detallesService;
-	}// contrusctor
+	public DetallesPedidoController(DetallesPedidoService detallesPedidoService) {
+		this.detallesPedidoService=detallesPedidoService;
+	}// constructor
 
 	@GetMapping
 	public List<Detalles> getDetalles() {
-		return detallesService.getAllDetalles();
+		return detallesPedidoService.getAllDetalles();
 	}
 
 	@GetMapping(path = "{detId}")
 	public Detalles getDetalle(@PathVariable("detId") Long id) {
-		return detallesService.getDetalles(id);
+		return detallesPedidoService.getDetalles(id);
 	}
 
 	@DeleteMapping(path = "{detId}")
 	public Detalles deleteDetalle(@PathVariable("detId") Long id) {
-		return detallesService.deleteDetalles(id);
+		return detallesPedidoService.deleteDetalles(id);
 	}
 
 	@PostMapping
 	public Detalles addDetalles(@RequestBody Detalles detalles) {
-		return detallesService.addDetalles(detalles);
+		return detallesPedidoService.addDetalles(detalles);
 	}// addProduct
 
 	@PutMapping(path = "{detId}")
@@ -50,6 +53,6 @@ public class DetallesPedidoController {
 			@RequestParam(required = false) String color,
 			@RequestParam(required = false) String talla, 
 			@RequestParam(required = false) int cantidad) {
-		return detallesService.updateDetalles(id_user, id_pedido, id, color, talla, cantidad);
+		return detallesPedidoService.updateDetalles(id_user, id_pedido, id, color, talla, cantidad);
 	}// updateProduct
 }

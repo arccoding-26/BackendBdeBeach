@@ -2,43 +2,53 @@ package org.bdebeach.bdebeach.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="detalles")
+@Table(name="detallespedido")
 public class Detalles {
 	
-	private Long id_producto;
-	private Long id_pedido;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id", unique=true, nullable=false)
+	private Long id;
+	private Long Productos_id;
+	private Long Pedido_id;
 	@Column(nullable=false)
 	private String color;
 	private String talla;
-	private int cantidad;
+	private Integer cantidad;
 	
-	public Detalles(Long id_producto, Long id_pedido, String color, String talla, int cantidad) {
-		this.id_producto = id_producto;
-		this.id_pedido = id_pedido;
+	//constructor
+	
+	public Detalles() {}//constructor vacío 
+
+	public Detalles(Long id, Long Productos_id, Long Pedido_id, String color, String talla, Integer cantidad) {
+		this.id = id;
+		this.Productos_id = Productos_id;
+		this.Pedido_id = Pedido_id;
 		this.color = color;
 		this.talla = talla;
 		this.cantidad = cantidad;
 	}//constructor
-	
-	public Detalles() {}//constructor vacío 
 
 	public Long getId_producto() {
-		return id_producto;
+		return Productos_id;
 	}
 
 	public void setId_producto(Long id_producto) {
-		this.id_producto = id_producto;
+		this.Productos_id = id_producto;
 	}
 
 	public Long getId_pedido() {
-		return id_pedido;
+		return Pedido_id;
 	}
 
 	public void setId_pedido(Long id_pedido) {
-		this.id_pedido = id_pedido;
+		this.Pedido_id = id_pedido;
 	}
 
 	public String getColor() {
@@ -57,18 +67,24 @@ public class Detalles {
 		this.talla = talla;
 	}
 
-	public int getCantidad() {
+	public Integer getCantidad() {
 		return cantidad;
 	}
 
-	public void setCantidad(int cantidad) {
+	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	@Override
 	public String toString() {
-		return "Detalles [id_producto=" + id_producto + ", id_pedido=" + id_pedido + ", color=" + color + ", talla="
-				+ talla + ", cantidad=" + cantidad + "]";
-	}//toString
+		return "Detalles [id=" + id + ", id_producto=" + Productos_id + ", id_pedido=" + Pedido_id + ", color=" + color
+				+ ", talla=" + talla + ", cantidad=" + cantidad + "]";
+	}
+
+	//toString
 	
 }//class Detalles

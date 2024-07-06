@@ -1,9 +1,9 @@
 package org.bdebeach.bdebeach.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import org.bdebeach.bdebeach.model.Pedido;
+import org.bdebeach.bdebeach.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,11 +49,11 @@ public class PedidosController {
 	@PutMapping(path="{prodId}") // http://localhost:8080/api/pedido/1
 	public Pedido updatePedido(@PathVariable("prodId") Long id, 
 			@RequestParam(required=false) Long id_user,
-			@RequestParam(required=false) Date fecha,
+			@RequestParam(required=false) String fecha,
 			@RequestParam(required=false) String status,
 			@RequestParam(required=false) String mPago,
 			@RequestParam(required=false) Double total) {
-		return pedidoService.updatePedido(id_user, fecha, status, mPago, total);
+		return pedidoService.updatePedido(id, id_user, fecha, status, mPago, total);
 	}//updatePedido
 	
 }//PedidosController

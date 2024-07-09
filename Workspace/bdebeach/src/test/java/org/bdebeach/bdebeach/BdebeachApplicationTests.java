@@ -20,7 +20,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.bdebeach.bdebeach.model.Producto;
-
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.hamcrest.Matchers.containsString;
 
@@ -84,14 +83,83 @@ class BdebeachApplicationTests {
 	@DisplayName("Se prueba modificar un producto id 4")
 	void pruebaPUT() throws Exception {
 		this.mockMvc.perform(put("/api/productos/4")
-				.queryParam("precio", "49.95")
+				.queryParam("precio", "59.95")
 				)
 		.andDo(print())
 		.andExpect(status().isOk())
-		.andExpect(content().string(containsString("49.95"))
+		.andExpect(content().string(containsString("59.95"))
 				);
 	}//pruebaPUT
 	
+	
+	
+	// Aquí inician las PU para Usuarios
+	@Test
+	@DisplayName("Se prueba el GET del endpoint htpp://localhost:8088/api/usuarios/2")
+	void pruebaGET1() throws Exception {
+		this.mockMvc.perform(get("/api/usuarios/2") )
+		.andDo(print())
+		.andExpect(status().isOk())
+		.andExpect(content().string(containsString("DayaanM"))
+				);
+		this.mockMvc.perform(get("/api/usuarios/5") )
+		.andDo(print())
+		.andExpect(status().isOk())
+		.andExpect(content().string(containsString("Asael"))
+				);
+	}//pruebaGET
+	
+	@Test
+	@DisplayName("Se prueba el DELETE del endpoint htpp://localhost:8088/api/usuarios/3")
+	@Disabled("Probado una vez, deshabilitado porque ya no existe el usuario con id 3")
+	void pruebaDELETE1() throws Exception {
+		this.mockMvc.perform(delete("/api/usuarios/3")
+				)
+		.andDo(print())
+		.andExpect(status().isOk())
+		.andExpect(content().string(containsString("Sofia"))
+				);
+	}//pruebaDELETE
+	 /*
+	@Test
+	@DisplayName("Se prueba crear un usuario nuevo (POST)")
+	// @Disabled("Se creó el usuario Juan Valencia")
+	void pruebaPOST1() throws Exception {
+		Usuario u = new Usuario();
+		u.setNombre("Juan");
+		u.setApellido("Valencia");
+		u.setCorreo("juanvale@gmail.com");
+		u.setContrasena("Pa$$W0rd");
+		u.setTelefono("5511223344");
+		u.setCalleNumero("Valencia 45");
+		u.setColonia("Centro");
+		u.setEstado("CDMX");
+		u.setCP("04650");
+		
+		this.mockMvc.perform(post("/api/usuarios/")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(asJsonString(u) )
+
+				)
+		.andDo(print())
+		.andExpect(status().isOk())
+		.andExpect(content().string(containsString("Juan"))
+				);
+	}//pruebaPOST
+	
+	
+	@Test
+	@DisplayName("Se prueba modificar un usuario id 4")
+	void pruebaPUT1() throws Exception {
+		this.mockMvc.perform(put("/api/usuarios/4")
+				.queryParam("nombre", "Are")
+				)
+		.andDo(print())
+		.andExpect(status().isOk())
+		.andExpect(content().string(containsString("Are"))
+				);
+	}//pruebaPUT
+	*/
 	private static String asJsonString(final Object obj) {
 	    try {
 	      return new ObjectMapper().writeValueAsString(obj);

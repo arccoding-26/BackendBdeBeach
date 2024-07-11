@@ -46,7 +46,7 @@ public class UsuarioService {
 		Optional<Usuario> tmpUsuario=
 				usuarioRepository.findByCorreo(usuario.getCorreo());
 		if(tmpUsuario.isEmpty()) {
-			usuario.setContrasena(encoder.encode(usuario.getCorreo()));
+			usuario.setContrasena(encoder.encode(usuario.getContrasena()));
 			return usuarioRepository.save(usuario);
 		} else {
 			System.out.println("El usuario con el email [" +
@@ -55,23 +55,44 @@ public class UsuarioService {
 		}//else
 	}//addUsuario
 	
-	public Usuario updateUsuario(Long id, ChangePassword cambiarcontrasena) { 
+	public Usuario updateContrasena(Long id, ChangePassword cambiarcontrasena) { 
 		Usuario tmpUsuario = null;
 		if (usuarioRepository.existsById(id)) {
 			tmpUsuario = usuarioRepository.findById(id).get();
-			// if (cambiarcontrasena.getContrasena().equals(tmpUsuario.getContrasena())) {
-	if(encoder.matches(cambiarcontrasena.getPassword(), tmpUsuario.getContrasena())) {
-				tmpUsuario.setContrasena(encoder.encode(cambiarcontrasena.getnPassword()));
+			
+			//if (cambiarcontrasena.getContrasena().equals(tmpUsuario.getContrasena())) {
+			if(encoder.matches(cambiarcontrasena.getContrasena(), tmpUsuario.getContrasena())) {
+				tmpUsuario.setContrasena(encoder.encode(cambiarcontrasena.getnContrasena()));
 				usuarioRepository.save(tmpUsuario);
 			}else {
 				System.out.println("updateUsuario - La contraseña del usuario ["+
 						id + "] no coincide");
 				tmpUsuario=null;
 			}//if equals
+		
 		}//if existById
 		return tmpUsuario;
+	}//updateContraseña
+	
+	public Usuario updateUsuario(Long id, String telefono, String callenumero, String colonia, String estado, String CP ) { 
+		Usuario tmpUsuario = null;
+		if (usuarioRepository.existsById(id)) {
+			Usuario usuario = usuarioRepository.findById(id).get();
+			if ( telefono != null)
+				usuario.setTelefono(telefono);
+			if ( callenumero!= null)
+				usuario.setCalleNumero(callenumero);
+			if (colonia != null)
+				usuario.setColonia(colonia);
+			if (estado != null)
+				usuario.setEstado(estado);
+			if (CP != null)
+				usuario.setCP(CP);
+			tmpUsuario=usuario;
+			usuarioRepository.save(usuario);
+		}//if existbyId
+		return tmpUsuario;
 	}//updateUsuario
-
 	public boolean validateUsuario(Usuario usuario) {
 		Optional <Usuario> userByCorreo =
 				usuarioRepository.findByCorreo(usuario.getCorreo());

@@ -1,30 +1,31 @@
 package org.bdebeach.bdebeach.dto;
 
 public class ChangePassword {
-	private String password;
-	private String nPassword;
-	public ChangePassword(String password, String nPassword) {
+	private String contrasena;
+	private String nContrasena;
+	public ChangePassword(String contrasena, String nContrasena) {
 		super();
-		this.password = password;
-		this.nPassword = nPassword;
+		this.contrasena = contrasena;
+		this.nContrasena = nContrasena;
 	}
-	public ChangePassword() {}	
-	
-	public String getPassword() {
-		return password;
+	public ChangePassword() {
+		// TODO Auto-generated constructor stub
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public String getContrasena() {
+		return contrasena;
 	}
-	public String getnPassword() {
-		return nPassword;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
-	public void setnPassword(String nPassword) {
-		this.nPassword = nPassword;
+	public String getnContrasena() {
+		return nContrasena;
+	}
+	public void setnContrasena(String nContrasena) {
+		this.nContrasena = nContrasena;
 	}
 	@Override
 	public String toString() {
-		return "ChangePassword [password=" + password + ", nPassword=" + nPassword + "]";
+		return "ChangePassword [contrasena=" + contrasena + ", nContrasena=" + nContrasena + "]";
 	}
 	
 }//class ChangePassword

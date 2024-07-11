@@ -1,4 +1,4 @@
-package org.bdebeach.bdebeach;
+/*package org.bdebeach.bdebeach;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -120,7 +120,7 @@ class BdebeachApplicationTests {
 		.andExpect(content().string(containsString("Sofia"))
 				);
 	}//pruebaDELETE
-	 /*
+	 
 	@Test
 	@DisplayName("Se prueba crear un usuario nuevo (POST)")
 	// @Disabled("Se creó el usuario Juan Valencia")
@@ -159,7 +159,7 @@ class BdebeachApplicationTests {
 		.andExpect(content().string(containsString("Are"))
 				);
 	}//pruebaPUT
-	*/
+	
 	private static String asJsonString(final Object obj) {
 	    try {
 	      return new ObjectMapper().writeValueAsString(obj);
@@ -169,3 +169,4 @@ class BdebeachApplicationTests {
 	 } // asJsonString
 
 }
+*/

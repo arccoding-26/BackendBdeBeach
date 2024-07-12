@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="./src/B.ico">
+    <link rel="stylesheet" href="./css/formulario_creacion.css">
+  </head>
+  <body>
+          <!--BARRA DE NAVEGACIÓN EN EL HEADER INICIA AQUÍ-->
+        <header id="barraNavegacion">
+
+
+        </header>
+      
+          <!--TITULO-->
+          <div class="titulo">
+          </div>
+      
+           <!--BARRA DE NAVEGACIÓN EN EL HEADER TERMINA AQUÍ-->
+
+
+
+
+
+    <!--INICIA CONTENIDO DE LA PÁGINA -->
+ <!-- Formulario para Añadir Productos -->
+ <section>
+  
+  <div class="alert alert-danger fade show" style="display:none;"
+                                             role="alert" id="alertValidaciones">
+               <p id="alertValidacionesTexto"></p>
+         </div>
+  <form id="Subir">
+    
+     
+      <div class="form-group">
+         <h2>Crear Producto</h2><br>
+        <label for="nombre"><strong>Nombre</strong></label>
+        <input type="nombre" class="form-control" id="nombre" placeholder="Nombre del producto">
+      <br>
+      
+          
+        <label for="descripcion"><strong>Descripción</strong></label>
+          <textarea class="form-control" id="descripcion" rows="3" placeholder="Te sugerimos no exceder los 60 caracteres"></textarea>
+        <br>
+        <label for="id" id="talla"><strong>Tallas</strong></label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input talla"  type="checkbox" name="talla" id="tallaS" value="S">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Chica
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input talla"  type="checkbox" name="talla" id="tallaM" value="M">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Mediana
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input talla"  type="checkbox" name="talla" id="tallaL" value="L">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Grande
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input talla" type="checkbox" name="talla" id="unitalla" value="U">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Unitalla
+          </label>
+        </div>
+        <br><br>
+        <div class="box">
+        <label for="id" id="colores"><strong>Colores</strong></label><br></div>
+        <div class="coloresform">
+        <input class="form-check-input colores" type="checkbox" name="color" id="#000000"
+        value="#000000" aria-label="..."  style ="background-color: #000000"><span>negro</span>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#D9AD26" 
+        value="#D9AD26" aria-label="..."  style ="background-color: #D9AD26"><span>dorado</span>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#FFCBDB" 
+        value="#FFCBDB" aria-label="..."  style ="background-color: #FFCBDB"><span>rosa</span>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#FF00FF" 
+        value="#FF00FF" aria-label="..."  style ="background-color: #FF00FF"><span>fucsia</span>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#77dde6" 
+        value="#77dde6" aria-label="..."  style ="background-color: #77dde6"><span>azul</span><br>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#FEF5E7" 
+        value="#FEF5E7" aria-label="..."  style ="background-color: #FEF5E7"><span>beige</span>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#F0B27A" 
+        value="#F0B27A" aria-label="..."  style ="background-color: #F0B27A"><span>naranja</span>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#FF3339" 
+        value="#FF3339" aria-label="..."  style ="background-color: #FF3339"><span>rojo</span>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#006341" 
+        value="#006341" aria-label="..."  style ="background-color: #006341"><span>verde</span>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#454B1B" 
+        value="#454B1B" aria-label="..."  style ="background-color: #454B1B"><span>militar</span><br>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#A04000" 
+        value="#A04000" aria-label="..."  style ="background-color: #A04000"><span>café</span>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#f9e79f" 
+        value="#f9e79f" aria-label="..."  style ="background-color: #f9e79f"><span>amarillo</span>
+        <input class="form-check-input colores" type="checkbox" name="color" id="#efac87" 
+        value="#efac87" aria-label="..."  style ="background-color: #efac87"><span>guayaba</span>
+        
+      </div>
+      
+        <!-- <label for="numeroDePiezas"><strong>Número de piezas</strong></label>
+        <select class="form-control" id="numeroDePiezas">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select> -->
+      <br>
+      
+          <label for="precio"><strong>Precio</strong></label>
+          <input type="Precio" class="form-control" id="precio" placeholder="Ingrese el costo del producto con el siguiente formato: 1234.00">
+        <br>
+        
+     
+
+        <div>
+          <h3>Elige una imagen</h3>
+          <img id="imagen"class="rounded mx-auto d-block" style="width: 200px;"> 
+           <button type="button" id="btnImagen">Subir imagen</button> 
+         <!--EmpiezaCloudinary--> 
+        </div>
+
+        <br>
+
+
+    <button type="submit" class="btnCrear" id="btnCrear">Guardar</button> 
+          </div>
+ </form>
+
+    <div class="alert alert-success fade show" style="display:none;"
+    role="alert" id="alertEnviado">
+    <p id="alertEnviadoTexto"></p>
+    </div>
+
+ 
+ </head>
+ </section>
+ <body>
+ <br>
+  
+  <!-- Formulario para Quitar Productos -->
+  <form id="bajar">
+  <div class="containerQuitar">
+  <h2>Eliminar Productos</h2>
+  
+      <label for="idRemove"><strong>ID</strong></label>
+      <input type="text" id="idRemove" name="idRemove" placeholder="Ingrese el ID del producto"><br><br>
+ 
+      <button class="btnCrear" type="submit" id="btnRemove">Eliminar producto</button>
+     </div>
+ </form>
+  
+     <!--TERMINA CONTENIDO DE LA PÁGINA-->
+
+    <!--TERMINA CONTENIDO DE LA PÁGINA-->
+
+
+
+    
+ <!--INICIA FOOTER-->
+ <footer class="py-3 my-4 footer" id="footer">
+  
+</footer>
+<!--TERMINA FOOTER-->
+    <script src="https://upload-widget.cloudinary.com/latest/global/all.js" type="text/javascript"></script>
+    <script src="./js/plantilla.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./js/formulario_creacion.js"></script>
+
+
+  
+</body>
+</html>

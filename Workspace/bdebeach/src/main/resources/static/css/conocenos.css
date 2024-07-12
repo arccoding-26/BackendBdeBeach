@@ -1,0 +1,101 @@
+/* FORMATO DE LAS CARDS */
+.card{
+    
+    margin: 10px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border-radius: 1.5rem;
+    opacity: 0.9;
+    transition: 0.5s ease;
+    border: solid rgb(183, 180, 180) 5px;
+}
+
+.card:hover{
+    opacity: 1;
+    margin: 1rem;
+    object-fit: cover;
+}
+.col-md-3{
+    background-color: white;
+}
+
+.card-body{
+    background-color: white;
+    margin: 10px;
+    border-radius: 1rem;
+    
+}
+
+.img-fluid{
+    border-radius: 5px;
+}
+
+.col-md-4{
+    padding: 1rem;
+    padding-bottom: .5rem;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.btn{
+    background-color: #A98C70;
+    border-color: #A98C70;
+}
+.col btn:hover{
+    width: 50px;
+
+}
+
+.titulo2{
+    
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+
+
+
+/* FORMATO DEL HEADER NAVEGADOR INICIA*/
+.nav-link:hover{
+    background-color: #dcb780a6;
+    border-radius: 2rem;
+}
+.titulo{
+    margin-top: 6rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+.navbar-brand:hover{
+    opacity: 1;
+    margin: 0.2rem;
+    object-fit: cover;
+}
+.navbarbtn{
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+
+
+/*FORMATO DEL HEADER NAVEGADOR FINALIZA*/
+
+
+/*FORMATO DEL FOOTER*/
+.footer{
+    background-color:  #A4A290;
+}
+.footer a{
+    color: white;
+}
+
+.footer-p{
+    color: white;
+}
+/*FORMATO DE FOOTER FINALIZA*/

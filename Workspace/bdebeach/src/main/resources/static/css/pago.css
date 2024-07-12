@@ -1,0 +1,32 @@
+
+
+
+/* FORMATO DEL HEADER NAVEGADOR INICIA*/
+.nav-link:hover{
+    background-color: #dcb780a6;
+    border-radius: 2rem;
+}
+.titulo{
+    margin-top: 6rem;
+    font-family: literata;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+
+
+/*FORMATO DEL HEADER NAVEGADOR FINALIZA*/
+
+
+/*FORMATO DEL FOOTER*/
+.footer{
+    background-color:  #A4A290;
+}
+.footer a{
+    color: white;
+}
+
+.footer-p{
+    color: white;
+}
+/*FORMATO DE FOOTER FINALIZA*/

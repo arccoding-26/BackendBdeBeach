@@ -10,7 +10,7 @@ import org.bdebeach.bdebeach.dto.Token;
 import org.bdebeach.bdebeach.model.Usuario;
 import org.bdebeach.bdebeach.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
+//import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +20,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @RestController
-@CrossOrigin(origins="http://localhost:5502")
+//@CrossOrigin(origins="http://localhost:5502")
 @RequestMapping(path="/api/login/")
 public class LoginController {
 	private final UsuarioService usuarioService;

@@ -1,0 +1,92 @@
+.row {
+    padding: 50px;
+    
+}
+.card {
+    border: none;
+}
+
+#imagen1 {
+    border-radius: 50px;
+}
+#imagen2{
+    border-radius: 50px;
+}
+#imagen3{
+    border-radius: 50px;
+}
+.cardL{
+    
+}
+
+h5{
+    font-weight: 650;
+}
+
+p{
+    font-weight: 500;
+}
+
+.carousel-caption{
+    color: black;
+}
+
+@media (min-width: 425px) {
+    .card-title {
+        font-size: 5em;
+    }
+}
+@media (max-width: 425px)  {
+    .card-title {
+        font-size: 2.5em;
+    }
+}
+
+@media (min-width: 768px)  {
+    .card-title {
+        margin-top: 1.8em;        
+    }
+}
+
+/* FORMATO DEL HEADER NAVEGADOR INICIA*/
+.nav-link:hover{
+    background-color: #dcb780a6;
+    border-radius: 2rem;
+}
+.titulo{
+    margin-top: 6rem;
+    font-family: literata;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.float-wa{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+}
+
+
+/*FORMATO DEL HEADER NAVEGADOR FINALIZA*/
+
+
+/*FORMATO DEL FOOTER*/
+.footer{
+    background-color:  #A4A290;
+}
+.footer a{
+    color: white;
+}
+
+.footer-p{
+    color: white;
+}
+/*FORMATO DE FOOTER FINALIZA*/
